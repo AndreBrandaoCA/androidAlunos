@@ -1,29 +1,52 @@
 package com.example.agenda.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.agenda.DAO.AlunoDAO;
 import com.example.agenda.R;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import com.example.agenda.DAO.AlunoDAO;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ListaAlunosActivity extends AppCompatActivity {
+
+    public static final String TITULO_APPBAR = "Lista de Alunos";
+    private final AlunoDAO dao = new AlunoDAO();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_alunos);
-        AlunoDao dao = new AlunoDAO();
+        setTitle(TITULO_APPBAR);
+        configuraFabNovoAluno();
+    }
 
-        setTitle("Lista de Alunos");
-        List<String> alunos = new ArrayList<>(Arrays.asList("Andre","Fran","Jose","Maria","Ana"));
+    private void configuraFabNovoAluno() {
+        FloatingActionButton botaoNovoAluno = findViewById(R.id.activiy_lista_alunos_fab_novo_aluno);
+        botaoNovoAluno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abreFormularioAlunoActivity();
+            }
+        });
+    }
+
+    private void abreFormularioAlunoActivity() {
+        startActivity((new Intent(this, FormularioAlunoActivity.class)));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        configuraLista();
+    }
+
+    private void configuraLista() {
         ListView listaDeAlunos = findViewById(R.id.activity_lista_alunos_listview);
-        listaDeAlunos.setAdapter(new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,dao.todos();));
+        listaDeAlunos.setAdapter(new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,dao.todos()));
     }
 }
