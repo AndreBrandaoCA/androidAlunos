@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.ListaAlunosActivity">
+    tools:context=".ui.activity.ListaAlunosActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/activiy_lista_alunos_fab_novo_aluno"

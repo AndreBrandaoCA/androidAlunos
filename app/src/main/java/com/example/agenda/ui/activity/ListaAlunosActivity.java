@@ -1,4 +1,4 @@
-package com.example.agenda.ui;
+package com.example.agenda.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,24 +6,22 @@ import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.agenda.DAO.AlunoDAO;
 import com.example.agenda.R;
 import com.example.agenda.model.Aluno;
+import com.example.agenda.ui.adapter.ListaAlunosAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import static com.example.agenda.ui.ConstantesActivities.CHAVE_ALUNO;
-import static com.example.agenda.ui.ConstantesActivities.TITULO_APPBAR;
+import static com.example.agenda.ui.activity.ConstantesActivities.CHAVE_ALUNO;
+import static com.example.agenda.ui.activity.ConstantesActivities.TITULO_APPBAR;
 
 public class ListaAlunosActivity extends AppCompatActivity {
 
     private final AlunoDAO dao = new AlunoDAO();
-    private ArrayAdapter<Aluno> adapter;
+    private ListaAlunosAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,8 +72,7 @@ public class ListaAlunosActivity extends AppCompatActivity {
     }
 
     private void atualizaAlunos() {
-        adapter.clear();
-        adapter.addAll(dao.todos());
+        adapter.atualiza(dao.todos());
     }
 
     private void configuraLista() {
@@ -108,7 +105,7 @@ public class ListaAlunosActivity extends AppCompatActivity {
     }
 
     private void configuraAdapter(ListView listaDeAlunos) {
-        adapter = new ArrayAdapter<>(this, R.layout.item_aluno);
+        adapter = new ListaAlunosAdapter(this);
         listaDeAlunos.setAdapter(adapter);
     }
 }

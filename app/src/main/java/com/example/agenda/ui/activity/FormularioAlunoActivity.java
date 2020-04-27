@@ -1,4 +1,4 @@
-package com.example.agenda.ui;
+package com.example.agenda.ui.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,15 +7,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import com.example.agenda.DAO.AlunoDAO;
 import com.example.agenda.R;
 import com.example.agenda.model.Aluno;
 
-import static com.example.agenda.ui.ConstantesActivities.CHAVE_ALUNO;
-import static com.example.agenda.ui.ConstantesActivities.TITULO_APPBAR;
+import static com.example.agenda.ui.activity.ConstantesActivities.CHAVE_ALUNO;
 
 public class FormularioAlunoActivity extends AppCompatActivity {
 
