@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Agenda</string>
+    <string name="formulario_aluno_nome">Nome</string>
+    <string name="formulario_aluno_telefone">Telefone</string>
+    <string name="formulario_aluno_email">Email</string>
+    <string name="formulario_aluno_salvar">Salvar</string>
+    <string name="lista_alunos_remover">Remover</string>
 </resources>

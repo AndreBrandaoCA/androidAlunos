@@ -77,9 +77,9 @@ public class FormularioAlunoActivity extends AppCompatActivity {
     }
 
     private void inicializacaoDosCampos() {
-        campoNome = findViewById(R.id.activity_formulatio_aluno_nome);
-        campoTelefone = findViewById(R.id.activity_formulatio_aluno_telefone);
-        campoEmail = findViewById(R.id.activity_formulatio_aluno_email);
+        campoNome = findViewById(R.id.activity_formulario_aluno_nome);
+        campoTelefone = findViewById(R.id.activity_formulario_aluno_telefone);
+        campoEmail = findViewById(R.id.activity_formulario_aluno_email);
     }
 
     private void preencheAluno() {

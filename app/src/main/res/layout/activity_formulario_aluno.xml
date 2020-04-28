@@ -9,23 +9,26 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/activity_formulatio_aluno_nome"
+            android:id="@+id/activity_formulario_aluno_nome"
             android:layout_margin="8dp"
-            android:hint="Nome"
-            android:inputType="textCapWords"/>
+            android:hint="@string/formulario_aluno_nome"
+            android:inputType="textCapWords"
+            android:importantForAutofill="no" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/activity_formulatio_aluno_telefone"
+            android:id="@+id/activity_formulario_aluno_telefone"
             android:layout_margin="8dp"
-            android:hint="Telefone"
-            android:inputType="phone"/>
+            android:hint="@string/formulario_aluno_telefone"
+            android:inputType="phone"
+            android:importantForAutofill="no" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/activity_formulatio_aluno_email"
+            android:id="@+id/activity_formulario_aluno_email"
             android:layout_margin="8dp"
-            android:hint="Email"
-            android:inputType="textEmailAddress"/>
+            android:hint="@string/formulario_aluno_email"
+            android:inputType="textEmailAddress"
+            android:importantForAutofill="no" />
     </LinearLayout>
 </ScrollView>

@@ -58,7 +58,6 @@ public class ListaAlunosAdapter extends BaseAdapter {
 
     private void clear() {
         alunos.clear();
-
     }
 
     private void addAll(List<Aluno> todos) {
